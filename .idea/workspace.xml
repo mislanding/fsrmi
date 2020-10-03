@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf1cfcb2-5eb0-4de2-8d7a-bea0bd7def67" name="Default Changelist" comment="" />
+    <list default="true" id="cf1cfcb2-5eb0-4de2-8d7a-bea0bd7def67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/RpcClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/JsonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcRemote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/Serializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/RpcServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/annotation/RpcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brul/fsrmi/Remote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brul/fsrmi/RemoteImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brul/fsrmi/server/Observer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brul/fsrmi/server/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brul/fsrmi/server/impl/CommonService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brul/fsrmi/server/impl/ObserverImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brul/fsrmi/server/impl/Register.java" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,16 +34,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1iAiuDkpYaw0NlxPTbSN2uxm8Cg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,10 +83,29 @@
       <option name="presentableId" value="Default" />
       <updated>1601357018147</updated>
       <workItem from="1601357021366" duration="10466000" />
+      <workItem from="1601378002549" duration="7107000" />
+      <workItem from="1601424177417" duration="3319000" />
+      <workItem from="1601429944146" duration="5432000" />
+      <workItem from="1601546100338" duration="3081000" />
+      <workItem from="1601551101735" duration="7285000" />
+      <workItem from="1601686807323" duration="3674000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
