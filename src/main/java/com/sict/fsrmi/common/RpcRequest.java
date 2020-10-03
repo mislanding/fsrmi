@@ -9,14 +9,12 @@ import lombok.Data;
  */
 @Data
 public class RpcRequest extends JsonSerializer{
+    private String ip;
+    private int port;
     /**
      * 请求ID，保证仅执行一次任务
      */
     private String requestId;
-    /**
-     * 返回值类型
-     */
-    private Class returnType;
     /**
      * 类名
      */

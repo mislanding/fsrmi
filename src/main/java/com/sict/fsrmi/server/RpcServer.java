@@ -3,6 +3,7 @@ package com.sict.fsrmi.server;
 import com.sict.fsrmi.common.RpcRequest;
 import com.sict.fsrmi.common.RpcResponse;
 import com.sict.fsrmi.common.RpcSelector;
+import com.sict.fsrmi.register.Client;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -24,6 +25,8 @@ public class RpcServer extends Thread {
     private static Selector selector;
     private volatile static RpcServer server;
     private volatile static Hashtable<String, RpcRequest> requestList = new Hashtable<>();
+    private volatile static Hashtable<String, SocketChannel> clentList = new Hashtable<>();
+
     static {
         try {
             selector = RpcSelector.getSelector();
@@ -34,10 +37,11 @@ public class RpcServer extends Thread {
 
     /**
      * 获得实例方法
+     *
      * @param port
      * @return
      */
-    public RpcServer getInstance(int port) {
+    public static RpcServer getInstance(int port) {
         if (server == null) {
             synchronized (RpcServer.class) {
                 if (server == null) {
@@ -55,25 +59,27 @@ public class RpcServer extends Thread {
 
     /**
      * 写方法，向客户返回消费结果
+     *
      * @param response
      */
     public void write(RpcResponse response) {
         try {
-            socket.register(selector,
-                    SelectionKey.OP_WRITE,
-                    ByteBuffer.wrap(response.serialize(response)));
-            //唤醒由于OP_READ而阻塞的selector
-            selector.wakeup();
+            //通过唯一的RequestId获取客户Socket
+            SocketChannel client = clentList.get(response.getRequestId());
+            //返回消费结果
+            client.write(ByteBuffer.wrap(response.serialize(response)));
         } catch (ClosedChannelException e) {
             e.printStackTrace();
+        }catch (IOException e){
+            System.out.println("返回消费结果出错");
         }
     }
 
     /**
-     * @返回待消费的消息列表
      * @return
+     * @返回待消费的消息列表
      */
-    public Hashtable getList(){
+    public Hashtable getList() {
         return requestList;
     }
 
@@ -121,6 +127,7 @@ public class RpcServer extends Thread {
                         System.out.println("=========================================================");
 
                     }
+                    //处理收到消息
                     if (key.isReadable()) {
                         SocketChannel socketChannel = (SocketChannel) key.channel();
                         InetSocketAddress address = (InetSocketAddress) socketChannel.getRemoteAddress();
@@ -136,6 +143,7 @@ public class RpcServer extends Thread {
                                 buffer.get(res, 0, len);
                                 RpcRequest request = new RpcRequest().deserialize(RpcRequest.class, res);
                                 requestList.put(request.getRequestId(), request);
+                                clentList.put(request.getRequestId(), socketChannel);
                                 buffer.clear();
                             }
                             System.out.println("=======================================================");
@@ -144,6 +152,7 @@ public class RpcServer extends Thread {
                             //客户端关闭了
                             key.cancel();
                             socketChannel.close();
+                            //这里要改
                             System.out.println("客户端已断开");
                             System.out.println("========================================================");
                         }

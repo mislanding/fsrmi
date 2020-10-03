@@ -9,6 +9,21 @@ import java.lang.reflect.Method;
  * 解码器
  */
 public class RpcDecoder {
+    private static volatile  RpcDecoder rpcDecoder;
+    private RpcDecoder() {
+    }
+
+    public static RpcDecoder getRpcDecoder() {
+        if (rpcDecoder == null) {
+            synchronized (RpcDecoder.class) {
+                if (rpcDecoder == null) {
+                    rpcDecoder = new RpcDecoder();
+                }
+            }
+        }
+        return rpcDecoder;
+    }
+
     /**
      * 获取实例化对象
      *
