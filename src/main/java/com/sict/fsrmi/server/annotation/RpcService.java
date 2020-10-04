@@ -1,17 +1,15 @@
 package com.sict.fsrmi.server.annotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * @author lyy
  * @date 2020年10月3日
  * 标注注册到注册中心的服务，表明其可被远程进行调用,并在服务端启动时创建实体
  */
-@Target(ElementType.ANNOTATION_TYPE)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface RpcService {
     String value();
 }

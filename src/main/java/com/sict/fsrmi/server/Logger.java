@@ -5,6 +5,9 @@
  */
 package com.sict.fsrmi.server;
 
+import com.sict.fsrmi.server.annotation.RpcService;
+
+@RpcService("Log")
 public class Log implements com.sict.fsrmi.Log {
     @Override
     public void printf() {
