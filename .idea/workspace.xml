@@ -2,24 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf1cfcb2-5eb0-4de2-8d7a-bea0bd7def67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/TestPrintfClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcSocket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/RegisterContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/RegisterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/TestPrintfServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Register.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/86138.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/RegisterClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/RpcProxyClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RegRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/STATUS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/entry/RegisterServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/ServerBoot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/annotation/AnnotationScannerUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/RpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/RpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/TestPrintfClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/TestPrintfClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/RpcDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/client/RpcEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/common/RpcRemote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/entry/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/RegisterContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/RegisterContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/RegisterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/RegisterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/register/entry/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/RpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/RpcServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/TestPrintfServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/TestPrintfServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/annotation/RpcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sict/fsrmi/server/annotation/RpcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/client/RpcClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/client/RpcClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/client/TestPrintfClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/client/TestPrintfClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/common/RpcDecoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/common/RpcEncoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/common/RpcRemote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/RegisterContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/RegisterContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/RegisterFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/RegisterFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/register/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/Consumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/RpcServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/RpcServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/TestPrintfServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/TestPrintfServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/annotation/RpcService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sict/fsrmi/server/annotation/RpcService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +52,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="fsrmi" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -66,6 +95,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.TestPrintfClient">
+    <configuration name="RegisterContainer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sict.fsrmi.register.RegisterContainer" />
+      <module name="fsrmi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sict.fsrmi.register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestPrintfClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sict.fsrmi.client.TestPrintfClient" />
       <module name="fsrmi" />
@@ -84,7 +126,7 @@
       <module name="fsrmi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sict.fsrmi.server.*" />
+          <option name="PATTERN" value="com.sict.fsrmi.server.annotation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,6 +138,7 @@
       <list>
         <item itemvalue="Application.TestPrintfClient" />
         <item itemvalue="Application.TestPrintfServer" />
+        <item itemvalue="Application.RegisterContainer" />
       </list>
     </recent_temporary>
   </component>
@@ -119,6 +162,8 @@
       <workItem from="1601546100338" duration="3081000" />
       <workItem from="1601551101735" duration="7285000" />
       <workItem from="1601686807323" duration="14640000" />
+      <workItem from="1601713653259" duration="2595000" />
+      <workItem from="1601774559863" duration="35156000" />
     </task>
     <servers />
   </component>
@@ -137,5 +182,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/fsrmi$TestPrintfClient.ic" NAME="TestPrintfClient Coverage Results" MODIFIED="1601780783309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.sict.fsrmi.client.*</FILTER>
+    </SUITE>
   </component>
 </project>

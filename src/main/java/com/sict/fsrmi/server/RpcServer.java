@@ -3,7 +3,6 @@ package com.sict.fsrmi.server;
 import com.sict.fsrmi.common.RpcRequest;
 import com.sict.fsrmi.common.RpcResponse;
 import com.sict.fsrmi.common.RpcSelector;
-import com.sict.fsrmi.register.Client;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

@@ -3,7 +3,7 @@
  * @data 2020/10/3
  * @version 1.0
  */
-package com.sict.fsrmi.register;
+package com.sict.fsrmi.register.entry;
 
 import lombok.Data;
 

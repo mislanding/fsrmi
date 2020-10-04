@@ -5,7 +5,6 @@
  */
 package com.sict.fsrmi.server;
 
-import com.sict.fsrmi.common.RpcDecoder;
 import com.sict.fsrmi.common.RpcRequest;
 import com.sict.fsrmi.common.RpcResponse;
 

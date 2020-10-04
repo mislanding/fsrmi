@@ -5,8 +5,10 @@
  */
 package com.sict.fsrmi.register;
 
+import com.sict.fsrmi.register.entry.RegisterServer;
+
 public class RegisterContainer {
     public static void main(String[] args) {
-        
+        new RegisterServer().start();
     }
 }

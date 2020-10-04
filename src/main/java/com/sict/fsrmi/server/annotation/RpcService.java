@@ -10,6 +10,6 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface RpcService {
-    String value();
+public @interface RpcService{
+    public String value();
 }

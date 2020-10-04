@@ -5,28 +5,34 @@
  */
 package com.sict.fsrmi.register;
 
+import com.sict.fsrmi.register.entry.Client;
+import com.sict.fsrmi.register.entry.Service;
+
+import java.util.HashMap;
 import java.util.List;
 
 public interface Register {
     /**
      * 注册服务列表
+     * @param service
      */
-    public void registerService();
+    public void registerService(Service service);
 
     /**
-     * 注册用户列表
+     * 注册客户列表
+     * @param client
      */
-    public void registerClient();
+    public void registerClient(Client client);
 
     /**
      * 向客户返回服务列表
-     * @return List<Service>
+     * @return HashMap<String,Service>
      *
      */
-    public List<Service> returnServiceList();
+    public HashMap<String,Service> returnServiceList();
 
     /**
-     * 通知客户节点下线
+     * 节点下线
      */
-    public void notifyClient();
+    public void deleteService(Service service);
 }

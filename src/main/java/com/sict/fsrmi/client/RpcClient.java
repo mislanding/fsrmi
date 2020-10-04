@@ -1,5 +1,6 @@
 package com.sict.fsrmi.client;
 
+import com.sict.fsrmi.common.JsonSerializer;
 import com.sict.fsrmi.common.RpcRequest;
 import com.sict.fsrmi.common.RpcResponse;
 import com.sict.fsrmi.common.RpcSelector;
@@ -47,11 +48,11 @@ public class RpcClient extends Thread {
      * 写方法
      * @param request
      */
-    public void write(RpcRequest request) {
+    public void write(Object request) {
         try {
             socket.register(selector,
                     SelectionKey.OP_WRITE,
-                    ByteBuffer.wrap(request.serialize(request)));
+                    ByteBuffer.wrap(new JsonSerializer().serialize(request)));
             //唤醒由于OP_READ而阻塞的selector
             selector.wakeup();
         } catch (ClosedChannelException e) {
@@ -64,7 +65,7 @@ public class RpcClient extends Thread {
      * @param requestId
      * @return
      */
-    public RpcResponse read(int requestId) {
+    public RpcResponse read(String requestId) {
         return responseList.get(requestId);
     }
 
@@ -126,7 +127,7 @@ public class RpcClient extends Thread {
                                     responseList.put(rpcResponse.getRequestId(), rpcResponse);
                                 }
                             } catch (IOException e) {
-                                System.out.println("服务器异常，请联系客服人员!正在关闭客户端.........");
+                                System.out.println("服务器异常，请联系客服人员!");
                                 key.cancel();
                                 socket.close();
                             }
@@ -134,7 +135,7 @@ public class RpcClient extends Thread {
                         }
                     }
                 }else {
-                    break;
+                    continue;
                 }
 
             }

@@ -5,6 +5,6 @@
  */
 package com.sict.fsrmi.common;
 
-public interface Log {
-    public void printf();
+public interface Logger{
+    public String printf(int x);
 }
