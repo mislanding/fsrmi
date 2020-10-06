@@ -140,7 +140,6 @@ public class RpcProxyClient implements InvocationHandler {
 
             }
         }
-        socket.write(request);
         RpcResponse response = socket.read(request.getRequestId());
         result = response.getResult();
         return result;
