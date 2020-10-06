@@ -1,4 +1,4 @@
-package com.sict.fsrmi.common;
+package com.sict.fsrmi.common.entry;
 
 import lombok.Data;
 

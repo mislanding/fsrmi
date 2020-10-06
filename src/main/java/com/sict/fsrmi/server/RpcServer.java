@@ -1,8 +1,7 @@
 package com.sict.fsrmi.server;
 
-import com.sict.fsrmi.common.ByteUtil;
-import com.sict.fsrmi.common.RpcRequest;
-import com.sict.fsrmi.common.RpcResponse;
+import com.sict.fsrmi.common.entry.RpcRequest;
+import com.sict.fsrmi.common.entry.RpcResponse;
 import com.sict.fsrmi.common.RpcSelector;
 
 import java.io.IOException;

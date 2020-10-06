@@ -7,8 +7,8 @@ package com.sict.fsrmi.register.entry;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sict.fsrmi.common.JsonSerializer;
-import com.sict.fsrmi.common.RegRequest;
-import com.sict.fsrmi.common.STATUS;
+import com.sict.fsrmi.common.entry.RegRequest;
+import com.sict.fsrmi.common.entry.STATUS;
 import com.sict.fsrmi.register.RegisterFactory;
 import lombok.SneakyThrows;
 import java.io.*;

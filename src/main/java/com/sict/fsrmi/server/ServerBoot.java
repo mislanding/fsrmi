@@ -2,8 +2,8 @@ package com.sict.fsrmi.server;
 
 import com.alibaba.fastjson.JSON;
 import com.sict.fsrmi.common.JsonSerializer;
-import com.sict.fsrmi.common.RegRequest;
-import com.sict.fsrmi.common.STATUS;
+import com.sict.fsrmi.common.entry.RegRequest;
+import com.sict.fsrmi.common.entry.STATUS;
 import com.sict.fsrmi.register.entry.Service;
 import com.sict.fsrmi.server.annotation.AnnotationScannerUtils;
 import com.sict.fsrmi.server.annotation.RpcService;

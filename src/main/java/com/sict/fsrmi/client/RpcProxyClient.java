@@ -5,8 +5,8 @@
  */
 package com.sict.fsrmi.client;
 
-import com.sict.fsrmi.common.RpcRequest;
-import com.sict.fsrmi.common.RpcResponse;
+import com.sict.fsrmi.common.entry.RpcRequest;
+import com.sict.fsrmi.common.entry.RpcResponse;
 import com.sict.fsrmi.register.entry.Service;
 
 import java.io.IOException;

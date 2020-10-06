@@ -1,6 +1,7 @@
 package com.sict.fsrmi.client;
 
 import com.sict.fsrmi.common.*;
+import com.sict.fsrmi.common.entry.RpcResponse;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -30,7 +31,7 @@ public class RpcClient extends Thread {
         }
     }
 
-    public volatile static Hashtable<String,RpcResponse> responseList = new Hashtable();
+    public volatile static Hashtable<String, RpcResponse> responseList = new Hashtable();
 
     public RpcClient(String ip, int port) {
         super();

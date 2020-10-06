@@ -1,5 +1,6 @@
-package com.sict.fsrmi.common;
+package com.sict.fsrmi.common.entry;
 
+import com.sict.fsrmi.common.JsonSerializer;
 import lombok.Data;
 
 /**
@@ -8,7 +9,7 @@ import lombok.Data;
  * 规定请求通信协议
  */
 @Data
-public class RpcRequest extends JsonSerializer{
+public class RpcRequest extends JsonSerializer {
     private String ip;
     private int port;
     /**

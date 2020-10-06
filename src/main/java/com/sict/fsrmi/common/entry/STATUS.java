@@ -1,4 +1,4 @@
-package com.sict.fsrmi.common;
+package com.sict.fsrmi.common.entry;
 /**
  * @author lyy
  * @data 2020/10/4

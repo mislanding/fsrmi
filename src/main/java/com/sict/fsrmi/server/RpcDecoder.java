@@ -1,6 +1,6 @@
 package com.sict.fsrmi.server;
 
-import com.sict.fsrmi.common.RpcRequest;
+import com.sict.fsrmi.common.entry.RpcRequest;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;

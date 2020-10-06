@@ -1,5 +1,6 @@
-package com.sict.fsrmi.common;
+package com.sict.fsrmi.common.entry;
 
+import com.sict.fsrmi.common.JsonSerializer;
 import lombok.Data;
 
 /**
