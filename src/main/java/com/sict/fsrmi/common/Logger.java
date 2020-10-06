@@ -6,5 +6,18 @@
 package com.sict.fsrmi.common;
 
 public interface Logger{
-    public String printf(int x);
+    /**
+     * print函数
+     * @param str
+     * @return
+     */
+    public String printf(String str);
+
+    /**
+     * 格式化print函数
+     * @param str
+     * @param args
+     * @return
+     */
+    public String printf(String str, Object... args);
 }

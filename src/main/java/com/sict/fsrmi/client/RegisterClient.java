@@ -30,7 +30,7 @@ public class RegisterClient extends Thread {
     private static ServerSocket serverSocket;
     private String ip;
     private int port;
-    public HashMap<String, Service> serviceHashMap;
+    public HashMap<String, Service> serviceHashMap = null;
     static {
         try {
             serverSocket = new ServerSocket(9081);
@@ -82,6 +82,10 @@ public class RegisterClient extends Thread {
         serviceHashMap = map;
         System.out.println("=========================服务列表更新==================================");
         System.out.println(serviceHashMap);
+        synchronized (this){
+            //更新列表后释放锁
+            notifyAll();
+        }
     }
 
     @SneakyThrows

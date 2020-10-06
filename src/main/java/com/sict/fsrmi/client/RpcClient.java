@@ -1,17 +1,11 @@
 package com.sict.fsrmi.client;
 
-import com.sict.fsrmi.common.JsonSerializer;
-import com.sict.fsrmi.common.RpcRequest;
-import com.sict.fsrmi.common.RpcResponse;
-import com.sict.fsrmi.common.RpcSelector;
+import com.sict.fsrmi.common.*;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.ClosedChannelException;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.SocketChannel;
+import java.nio.channels.*;
 import java.util.Calendar;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -66,6 +60,11 @@ public class RpcClient extends Thread {
      * @return
      */
     public RpcResponse read(String requestId) {
+        synchronized (this){
+            if (responseList.containsKey(requestId)) {
+                notifyAll();
+            }
+        }
         return responseList.get(requestId);
     }
 
@@ -112,10 +111,11 @@ public class RpcClient extends Thread {
                              * 由于nio的write事件并不会产生阻塞，故事件已经处理完毕，因此要改为监听OP_READ事件
                              */
                             socket.register(selector, SelectionKey.OP_READ);
-                            System.out.println("==============\" + ca.getTime() + \" ==============");
+                            System.out.println("==============" + ca.getTime() + " ==============");
+                            System.out.println("==============发送请求============================");
                         }
                         if (key.isReadable()) {
-                            ByteBuffer buffer = ByteBuffer.allocate(1024);
+                            ByteBuffer buffer = ByteBuffer.allocate(409600);
                             int len = 0;
                             try {
                                 if ((len = socket.read(buffer)) > 0) {
@@ -125,6 +125,9 @@ public class RpcClient extends Thread {
                                             buffer.array());
                                     System.out.println("收到来自服务器的消息，RequestId="+ rpcResponse.getRequestId());
                                     responseList.put(rpcResponse.getRequestId(), rpcResponse);
+                                    synchronized (this){
+                                        notifyAll();
+                                    }
                                 }
                             } catch (IOException e) {
                                 System.out.println("服务器异常，请联系客服人员!");
@@ -142,6 +145,8 @@ public class RpcClient extends Thread {
         } catch (IOException e) {
             System.out.println("客户端异常，请重新启动"
             );
+        }catch (AlreadyConnectedException e){
+            System.out.println("服务器端口正在被占用，请稍后");
         }
     }
 }

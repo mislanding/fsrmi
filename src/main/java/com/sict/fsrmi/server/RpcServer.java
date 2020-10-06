@@ -1,5 +1,6 @@
 package com.sict.fsrmi.server;
 
+import com.sict.fsrmi.common.ByteUtil;
 import com.sict.fsrmi.common.RpcRequest;
 import com.sict.fsrmi.common.RpcResponse;
 import com.sict.fsrmi.common.RpcSelector;
@@ -24,6 +25,7 @@ public class RpcServer extends Thread {
     private static Selector selector;
     private volatile static RpcServer server;
     private volatile static Hashtable<String, RpcRequest> requestList = new Hashtable<>();
+    private volatile static Hashtable<String, RpcRequest> finRequestList = new Hashtable<>();
     private volatile static Hashtable<String, SocketChannel> clentList = new Hashtable<>();
 
     static {
@@ -82,6 +84,14 @@ public class RpcServer extends Thread {
         return requestList;
     }
 
+    /**
+     * @return
+     * @返回已完成的消息列表
+     */
+    public Hashtable getFinList() {
+        return finRequestList;
+    }
+
     @Override
     public void run() {
         try {
@@ -132,15 +142,21 @@ public class RpcServer extends Thread {
                         InetSocketAddress address = (InetSocketAddress) socketChannel.getRemoteAddress();
                         System.out.println(ca.getTime() + "\t" + address.getHostString() +
                                 ":" + address.getPort() + "\t");
-                        ByteBuffer buffer = ByteBuffer.allocate(1024);
+                        ByteBuffer buffer = ByteBuffer.allocate(409600);
                         int len = 0;
-                        byte[] res = new byte[1024];
+                        byte[] res = new byte[409600];
                         //捕获异常，因为在客户端关闭后会发送FIN报文，会触发read事件，但连接已关闭,此时read()会产生异常
                         try {
                             while ((len = socketChannel.read(buffer)) > 0) {
                                 buffer.flip();
                                 buffer.get(res, 0, len);
                                 RpcRequest request = new RpcRequest().deserialize(RpcRequest.class, res);
+                                //使用全局唯一ID标识请求，保证多次同个请求最多执行一次
+                                if (requestList.containsKey(request.getRequestId()) ||
+                                        finRequestList.containsKey(request.getRequestId())) {
+
+                                    continue;
+                                }
                                 requestList.put(request.getRequestId(), request);
                                 clentList.put(request.getRequestId(), socketChannel);
                                 buffer.clear();
