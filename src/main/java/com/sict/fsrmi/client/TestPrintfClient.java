@@ -6,16 +6,14 @@
 package com.sict.fsrmi.client;
 import com.sict.fsrmi.common.Logger;
 
-import java.util.Arrays;
 
 
 public class TestPrintfClient {
     public static void main(String[] args) {
+        //获得代理类
         Logger logger =  (Logger) RpcProxyClient.getProxy(new com.sict.fsrmi.client.Logger());
-        int[] strs = new int[1025];
-        Arrays.fill(strs, 100);
-        System.out.println(logger.printf("%s%d", "wlke", 6,strs));
-
-        System.out.println(logger.printf("kkk"));
+        //通过代理类进行调用
+        String result = logger.printf("多次调用测试");
+        System.out.println(result);
     }
 }

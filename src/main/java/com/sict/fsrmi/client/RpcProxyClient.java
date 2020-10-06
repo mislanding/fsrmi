@@ -127,7 +127,7 @@ public class RpcProxyClient implements InvocationHandler {
         synchronized (socket){
             while (socket.read(request.getRequestId()) == null) {
                 //设置200ms超时，若无反应则再次发送
-                socket.wait(2000);
+                socket.wait(4000);
                 if(socket.read(request.getRequestId()) == null){
                     if (i >= 3) {
                         //重发三次后仍然无结果则不再发送
@@ -140,6 +140,7 @@ public class RpcProxyClient implements InvocationHandler {
 
             }
         }
+        socket.write(request);
         RpcResponse response = socket.read(request.getRequestId());
         result = response.getResult();
         return result;

@@ -24,8 +24,8 @@ public class Logger implements com.sict.fsrmi.common.Logger {
     @Override
     public String printf(String str, Object... args) {
         Object[] objects = args;
-        if (Arrays.toString(args).length() > 1024) {
-            return "false,格式化变量数大于1024字节";
+        if (args.length > 1024) {
+            return "false,格式化变量数大于1024个";
         }
         for (Object object : objects) {
             if (object.getClass().equals(String.class)) {

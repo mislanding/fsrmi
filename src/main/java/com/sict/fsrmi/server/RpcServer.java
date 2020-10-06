@@ -152,6 +152,7 @@ public class RpcServer extends Thread {
                                 buffer.get(res, 0, len);
                                 RpcRequest request = new RpcRequest().deserialize(RpcRequest.class, res);
                                 //使用全局唯一ID标识请求，保证多次同个请求最多执行一次
+                                //在消费队列及消费完成队列中寻找是否为重复请求
                                 if (requestList.containsKey(request.getRequestId()) ||
                                         finRequestList.containsKey(request.getRequestId())) {
 
